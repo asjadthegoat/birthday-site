@@ -9,18 +9,28 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+.petal{
+position:fixed;
+top:-10px;
+width:12px;
+height:12px;
+background:pink;
+border-radius:50% 0 50% 50%;
+opacity:0.7;
+animation:fallPetals linear forwards;
+pointer-events:none;
 }
 
+@keyframes fallPetals{
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+}
 body{
-background:linear-gradient(135deg,#081c3a,#123d7a,#1b4d9b);
-color:white;
-overflow-x:hidden;
-min-height:100vh;
+background:
+radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6) 0%, transparent 30%),
+radial-gradient(circle at 80% 30%, rgba(255,192,203,0.4) 0%, transparent 35%),
+linear-gradient(135deg, #cfe8ff, #ffe6f2);
 }
 
 .star{
@@ -45,7 +55,7 @@ transform:translateY(-10vh);
 .flower{
 position:fixed;
 font-size:2rem;
-opacity:.15;
+opacity:.25;
 pointer-events:none;
 }
 
@@ -408,9 +418,29 @@ document.getElementById("result").innerHTML=
 function celebrate(){
 
 document.getElementById("finish").innerHTML=
-'<div class="big-finish">🎂 HAPPY BIRTHDAY IN ADVANCE SHLOAMMM 🎂<br><br>🎗 From Asjad 🎗</div>';
+'<div class="big-finish">🎂 HAPPY BIRTHDAY SHLOAMMM 🎂<br><br>🎗 From Asjad 🎗</div>';
 
 }
+
+</script>
+
+<script>
+
+function createPetal(){
+const petal = document.createElement("div");
+petal.classList.add("petal");
+
+petal.style.left = Math.random() * 100 + "vw";
+petal.style.animationDuration = (Math.random() * 3 + 4) + "s";
+
+document.body.appendChild(petal);
+
+setTimeout(() => {
+petal.remove();
+}, 7000);
+}
+
+setInterval(createPetal, 300);
 
 </script>
 
