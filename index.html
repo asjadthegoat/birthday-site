@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Shloammm ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#081c3a,#123d7a,#1b4d9b);
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.star{
+position:fixed;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:floatStar linear infinite;
+opacity:.8;
+}
+
+@keyframes floatStar{
+from{
+transform:translateY(110vh);
+}
+to{
+transform:translateY(-10vh);
+}
+}
+
+.flower{
+position:fixed;
+font-size:2rem;
+opacity:.15;
+pointer-events:none;
+}
+
+.f1{top:20px;left:20px;}
+.f2{top:20px;right:20px;}
+.f3{bottom:20px;left:20px;}
+.f4{bottom:20px;right:20px;}
+
+.container{
+padding:40px 20px;
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+h1{
+font-size:3rem;
+margin-top:50px;
+}
+
+.subtitle{
+opacity:.8;
+margin-top:10px;
+margin-bottom:30px;
+}
+
+button{
+border:none;
+padding:14px 22px;
+border-radius:14px;
+cursor:pointer;
+background:#4ea1ff;
+color:white;
+font-size:1rem;
+margin:8px;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+}
+
+.card{
+display:none;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:25px;
+margin-top:25px;
+border-radius:20px;
+line-height:1.8;
+}
+
+.menu{
+display:none;
+margin-top:25px;
+}
+
+.song{
+display:block;
+color:#b8d9ff;
+margin:12px;
+text-decoration:none;
+font-size:1.05rem;
+}
+
+.song:hover{
+text-decoration:underline;
+}
+
+.quiz-question{
+margin:25px 0;
+}
+
+.final-box{
+margin-top:20px;
+font-size:1.15rem;
+}
+
+#typed{
+min-height:70px;
+}
+
+.big-finish{
+font-size:2.2rem;
+margin-top:25px;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #fff;
+}
+to{
+text-shadow:0 0 25px #8ec5ff;
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="flower f1">🌸</div>
+<div class="flower f2">🌸</div>
+<div class="flower f3">🌸</div>
+<div class="flower f4">🌸</div>
+
+<div class="container">
+
+<h1 id="typed"></h1>
+
+<p class="subtitle">
+A small birthday surprise from Asjad ✨
+</p>
+
+<button onclick="openGift()">🎁 Open Your Gift</button>
+
+<div class="menu" id="menu">
+
+<button onclick="showSection('message')">💌 Read a Message</button>
+
+<button onclick="showSection('songs')">🎵 Favourite Songs</button>
+
+<button onclick="showSection('quiz')">🧠 Birthday Quiz</button>
+
+<button onclick="showSection('ending')">🎁 Final Surprise</button>
+
+</div>
+
+<div class="card" id="message">
+
+<h2>💌 A Message For You</h2>
+
+<br>
+
+<p>
+Happy Birthday Twinn,
+<br><br>
+
+I know I don't always say things properly, but I'm genuinely grateful
+to have you in my life.
+<br><br>
+
+You've made a lot of ordinary days more fun just by being yourself.
+Your jokes, your energy, and the random conversations we have mean
+more than you probably realize.
+<br><br>
+
+I hope today brings you happiness, good memories, and everything
+you've been wishing for.
+<br><br>
+
+Thank you for being such an amazing friend.
+<br><br>
+
+— Asjad ❤️
+</p>
+
+</div>
+
+<div class="card" id="songs">
+
+<h2>🎵 Favourite Songs</h2>
+
+<br>
+
+<a class="song" href="https://www.youtube.com/results?search_query=sweater+weather+the+neighbourhood" target="_blank">
+🎶 Sweater Weather — The Neighbourhood
+</a>
+
+<a class="song" href="https://www.youtube.com/results?search_query=daddy+issues+the+neighbourhood" target="_blank">
+🎶 Daddy Issues — The Neighbourhood
+</a>
+
+<a class="song" href="https://www.youtube.com/results?search_query=softcore+the+neighbourhood" target="_blank">
+🎶 Softcore — The Neighbourhood
+</a>
+
+<a class="song" href="https://www.youtube.com/results?search_query=LSD+ASAP+Rocky" target="_blank">
+🎶 L$D — A$AP Rocky
+</a>
+
+</div>
+
+<div class="card" id="quiz">
+
+<h2>🧠 Birthday Quiz</h2>
+
+<div class="quiz-question">
+<p>1. What's my favourite colour?</p>
+<button onclick="answer(this,true)">Blue 💙</button>
+<button onclick="answer(this,false)">Green</button>
+<button onclick="answer(this,false)">Orange</button>
+</div>
+
+<div class="quiz-question">
+<p>2. Am I the GOAT?</p>
+<button onclick="answer(this,true)">Obviously 🐐</button>
+<button onclick="answer(this,false)">No</button>
+<button onclick="answer(this,false)">Maybe</button>
+</div>
+
+<div class="quiz-question">
+<p>3. How pretty are you?</p>
+<button onclick="answer(this,false)">Average</button>
+<button onclick="answer(this,false)">Pretty</button>
+<button onclick="answer(this,true)">The prettiest ✨</button>
+</div>
+
+<div class="quiz-question">
+<p>4. What's my favourite part of the day?</p>
+<button onclick="answer(this,false)">Sleeping</button>
+<button onclick="answer(this,true)">Talking to you ❤️</button>
+<button onclick="answer(this,false)">Eating</button>
+</div>
+
+<div class="quiz-question">
+<p>5. Who made this website?</p>
+<button onclick="answer(this,false)">Google</button>
+<button onclick="answer(this,true)">Asjad 😎</button>
+<button onclick="answer(this,false)">Aliens</button>
+</div>
+
+<div class="quiz-question">
+<p>6. How awesome are you?</p>
+<button onclick="answer(this,false)">Normal</button>
+<button onclick="answer(this,false)">Pretty awesome</button>
+<button onclick="answer(this,true)">Extremely awesome 🌟</button>
+</div>
+
+<button onclick="finishQuiz()">Submit Quiz</button>
+
+<p id="result" style="margin-top:15px;"></p>
+
+</div>
+
+<div class="card" id="ending">
+
+<h2>🎁 One Last Thing...</h2>
+
+<div class="final-box">
+
+<br>
+
+Before this website ends, there's one last thing.
+
+<br><br>
+
+This wasn't the only gift I had planned.
+
+<br><br>
+
+I have something for you in person whenever you're free.
+
+<br><br>
+
+No rush — just let me know when you'd like to collect it.
+
+<br><br>
+
+Until then, I hope you've had an amazing birthday.
+
+<br><br>
+
+— Asjad
+
+</div>
+
+<button onclick="celebrate()">
+✨ Reveal Final Message
+</button>
+
+<div id="finish"></div>
+
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<80;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.animationDuration=
+(Math.random()*10+8)+"s";
+
+star.style.opacity=Math.random();
+
+document.body.appendChild(star);
+
+}
+
+const text="Happy Birthday Shloam ✨";
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+
+document.getElementById("typed").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,90);
+
+}
+
+}
+
+typeWriter();
+
+function openGift(){
+
+document.getElementById("menu").style.display="block";
+
+}
+
+function showSection(id){
+
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
+
+}
+
+let score=0;
+
+function answer(btn,correct){
+
+if(btn.dataset.clicked) return;
+
+btn.dataset.clicked=true;
+
+if(correct){
+
+score++;
+
+btn.style.background="#22c55e";
+
+}else{
+
+btn.style.background="#ef4444";
+
+}
+
+}
+
+function finishQuiz(){
+
+document.getElementById("result").innerHTML=
+"🎉 You scored "+score+"/4!";
+}
+
+function celebrate(){
+
+document.getElementById("finish").innerHTML=
+'<div class="big-finish">🎂 HAPPY BIRTHDAY SHLOAM 🎂<br><br>❤️ From Asjad ❤️</div>';
+
+}
+
+</script>
+
+</body>
+</html>
